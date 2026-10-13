@@ -2,11 +2,11 @@
 
 Research code for **Spatio-Temporal Field-Modulated Fourier Neural Operator for Transmission Loss Estimation**, by **Yufei Yang, Yifan Sun, Lei Cheng, and Peter Gerstoft**.
 
-The manuscript was accepted by *IEEE Signal Processing Letters* on September 27, 2026, according to the authors' final-submission record. [Project page](https://yufeila.github.io/TAM-FNO-Underwater-Acoustic-Prediction/) · [Accepted manuscript](docs/paper.pdf) · [Reproduction protocol](docs/REPRODUCIBILITY.md) · [Data specification](docs/DATA.md) · [Citation](CITATION.cff)
+The manuscript was accepted by *IEEE Signal Processing Letters* on September 27, 2026, according to the authors' final-submission record. [Project page](https://yufeila.github.io/STFM-FNO/) · [Accepted manuscript](docs/paper.pdf) · [Reproduction protocol](docs/REPRODUCIBILITY.md) · [Data specification](docs/DATA.md) · [Citation](CITATION.cff)
 
 STFM-FNO estimates underwater acoustic transmission-loss (TL) fields from a sound-speed field (SSF) and its acquisition time. A 24-dimensional daily/yearly Fourier encoding generates channel-wise affine modulation inside four FNO blocks. Time supplies an auxiliary inductive bias for learning from temporally organized data; the SSF remains the physical environmental input.
 
-The GitHub repository retains its historical **TAM-FNO-Underwater-Acoustic-Prediction** URL. The package and documentation use the final paper name **STFM-FNO**. Version 0.2.0 replaces the earlier random-split entry points with the final monthly blocked protocol.
+Originally developed as TAM-FNO, this repository now uses the final paper name STFM-FNO. Version 0.2.0 replaces the earlier random-split entry points with the final monthly blocked protocol.
 
 ## Method overview
 
@@ -27,8 +27,8 @@ The release preserves the model arithmetic used in the experiments while consoli
 The existing experiment environment was inspected as Python **3.10.20**, PyTorch **2.5.1** / CUDA **12.1**, NumPy **1.26.4**, SciPy **1.11.4**, h5py **3.11.0**, and scikit-image **0.25.2**, on Linux with NVIDIA A800 GPUs. The pinned dependencies reflect that environment. CPU is supported for the synthetic check; paper-scale training requires substantial RAM and GPU memory.
 
 ```bash
-git clone https://github.com/yufeila/TAM-FNO-Underwater-Acoustic-Prediction.git
-cd TAM-FNO-Underwater-Acoustic-Prediction
+git clone https://github.com/yufeila/STFM-FNO.git
+cd STFM-FNO
 conda env create -f environment.yml
 conda activate stfm_fno
 pip install -e .
@@ -173,4 +173,4 @@ Please cite the paper when using the model or experiments. DOI, volume, and page
 
 The software is distributed under the [MIT License](LICENSE). Third-party source ancestry and license notices are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). The software license applies to code; the manuscript and external research data retain their respective rights.
 
-For questions or reproducible bug reports, use the [repository issue tracker](https://github.com/yufeila/TAM-FNO-Underwater-Acoustic-Prediction/issues). Please include your command, environment, and configuration, without attaching private data.
+For questions or reproducible bug reports, use the [repository issue tracker](https://github.com/yufeila/STFM-FNO/issues). Please include your command, environment, and configuration, without attaching private data.

@@ -7,7 +7,7 @@ authors:
   - family-names: Yang
     given-names: Yufei
     orcid: "https://orcid.org/0009-0000-0127-2356"
-repository-code: "https://github.com/yufeila/TAM-FNO-Underwater-Acoustic-Prediction"
+repository-code: "https://github.com/yufeila/STFM-FNO"
 license: MIT
 preferred-citation:
   type: article

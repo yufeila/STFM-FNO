@@ -20,8 +20,8 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/yufeila/TAM-FNO-Underwater-Acoustic-Prediction"
-Homepage = "https://yufeila.github.io/TAM-FNO-Underwater-Acoustic-Prediction/"
+Repository = "https://github.com/yufeila/STFM-FNO"
+Homepage = "https://yufeila.github.io/STFM-FNO/"
 
 [project.scripts]
 stfm-fno = "stfm_fno.experiments:main"
