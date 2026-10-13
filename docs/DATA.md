@@ -1,26 +1,30 @@
-# Data specification
+# Dataset
 
-The release consumes paired SSP/TL arrays; it does not download or generate the original experiment dataset.
+The experiments use 2,920 chronologically ordered sound-speed fields (SSF) and paired RAM-computed transmission-loss (TL) fields: 365 days × eight samples per day. The main acoustic configuration uses a 200-Hz source at 50-m depth over 0–200 m depth and 0–40 km range.
 
-| Property | Required value |
-|---|---|
-| Sample count | 2920, chronologically ordered, eight samples per day for a non-leap year |
-| Sample index | Zero-based global index; do not renumber after splitting |
-| SSP file/key | `SSP.mat`, `square_SSP` |
-| SSP logical shape | `(sample, depth, range) = (2920, 21, 10)` |
-| SSP units | m/s |
-| TL file/key | `TL.mat`, `square_TL` |
-| TL logical shape | `(sample, depth, range) = (2920, 199, 800)` |
-| TL units | dB |
-| Main acoustic condition | 200 Hz, source depth 50 m; remaining conditions follow the cited 3DSSF setup |
-| Field domain | Paper describes 0–200 m depth and 0–40 km range |
+Place the paired MATLAB files in a local data directory:
 
-MATLAB v7.3 stores reversed dimensions in the HDF5 representation: SSP `(10, 21, 2920)` and TL `(800, 199, 2920)`. The loader reverses these dimensions; conventional MATLAB files are read with SciPy in their logical dimensions. All values must be finite. No heuristic sample reordering or axis inference is performed.
+```text
+raw_data/
+├── SSP.mat
+└── TL.mat
+```
 
-SSP is bilinearly interpolated to `(199, 800)` with PyTorch `align_corners=True`; values are float32. Interpolation is batched to reduce transient memory. The full interpolated input and target arrays each occupy about 1.86 GB in decimal units, before train/test copies, normalization, optimizer states, and concatenation features. Temporal concatenation is constructed per minibatch in the release.
+| File | MATLAB key | Logical shape `(sample, depth, range)` | Units |
+|---|---|---|---|
+| `SSP.mat` | `square_SSP` | `(2920, 21, 10)` | m/s |
+| `TL.mat` | `square_TL` | `(2920, 199, 800)` | dB |
 
-The supplied arrays must already contain the matching SSP and RAM output at each global index. Key/shape/finite checks cannot verify that pairing, sampling time, frequency, source depth, seabed conditions, or solver settings are correct. Keep those generation records alongside the dataset.
+MATLAB v7.3 stores reversed dimensions in HDF5: SSP `(10, 21, 2920)` and TL `(800, 199, 2920)`. The loader restores their logical dimensions; conventional MATLAB files are read with SciPy. SSP is bilinearly interpolated to the TL grid using PyTorch `align_corners=True`, and both arrays are converted to float32.
 
-The reference dataset is cited as S. Li, L. Cheng, J. Li, Z. Wang, and J. Li, “Learning data distribution of three-dimensional ocean sound speed fields via diffusion models,” *The Journal of the Acoustical Society of America*, 155(5), 3410–3425, 2024. The local records do not confirm a public download or distribution license for the study-specific paired SSP/TL files. The original 3DSSF project provides separate environmental data, as noted in the third-party notices; these are not a verified drop-in replacement for the required pairs. Obtain access and redistribution rights from the relevant dataset owners. MIT licensing of this software does not license external data or the RAM solver.
+Each global index `0...2919` must identify the matching SSP/TL pair at the original sampling time. Keep the chronological order and finite values; do not renumber samples after splitting. The paper's monthly blocked indices and training normalization are described in [the training and evaluation guide](REPRODUCIBILITY.md).
 
-For the paper's 100-Hz frequency-change experiment, the corresponding labels and generation contract are required. The provided release does not establish the complete original 100-Hz data-generation procedure and does not advertise its main-data CLI as an exact reproduction of that experiment.
+Check the file keys and shapes with:
+
+```bash
+python scripts/validate_data.py --raw-ssp raw_data/SSP.mat --raw-tl raw_data/TL.mat
+```
+
+Add `--full` to check finite values and calculate file hashes.
+
+The paper's environmental dataset source is S. Li, L. Cheng, J. Li, Z. Wang, and J. Li, “Learning data distribution of three-dimensional ocean sound speed fields via diffusion models,” *The Journal of the Acoustical Society of America*, 155(5), 3410–3425, 2024. The study-specific paired SSP/TL files are not bundled; no public download for these pairs is provided. Dataset access and redistribution remain subject to the owners' terms. The software license applies to code.

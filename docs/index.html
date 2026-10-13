@@ -228,13 +228,6 @@
         font-weight: 700;
       }
 
-      .release-note {
-        margin-top: 20px;
-        padding: 18px 20px;
-        background: var(--soft);
-        border-left: 3px solid var(--link);
-      }
-
       footer {
         padding: 32px 0 44px;
         border-top: 1px solid var(--line);
@@ -284,7 +277,7 @@
           <a class="button" href="https://github.com/yufeila/STFM-FNO">Code</a>
           <a class="button" href="https://ieeexplore.ieee.org/document/11723170" title="Early Access article; DOI: 10.1109/LSP.2026.3740795">IEEE Xplore</a>
           <a class="button" href="#results">Results</a>
-          <a class="button" href="#release">Code Release Status</a>
+          <a class="button" href="#release">Getting Started</a>
         </div>
       </div>
     </header>
@@ -303,12 +296,11 @@
             <p>
               STFM-FNO is a learned surrogate for ocean acoustic transmission loss (TL) estimation.
               It takes a sound speed field (SSF), range-depth coordinates, and the associated time
-              and estimates TL at the same locations and time. The task is current-time estimation,
-              not future forecasting.
+              and estimates TL at the same locations and time.
             </p>
             <p>
-              Rather than concatenating time with the SSF, the method maps Fourier-encoded time
-              to block-wise affine parameters that modulate latent spatial features. The
+              The method maps Fourier-encoded time to block-wise affine parameters that
+              modulate latent spatial features. The
               study evaluates this design under monthly blocked testing with temporal purge intervals,
               including conditional FNO baselines, a separate operating-frequency experiment,
               and alternative temporal encodings.
@@ -323,9 +315,8 @@
           <div class="content">
             <p>
               With source and boundary conditions fixed, the SSF determines TL through a physical
-              mapping. A time-conditioned surrogate is a modeling choice for exploiting temporal
-              structure in a finite environmental dataset, not a statement that a static physical
-              mapping is invalid or that time is an additional physical state variable.
+              mapping. The time-conditioned surrogate uses temporal structure in the
+              environmental dataset as an auxiliary inductive bias.
             </p>
             <p>
               The input consists of the SSF across range and depth, the locations of these points,
@@ -420,8 +411,8 @@
             </p>
             <p>
               The main configuration uses a 200-Hz source at 50-m depth and a 199-by-800 grid
-              covering ranges of 0-40 km and depths of 0-200 m. All values below are reported
-              paper results; no experiments were rerun for this website update.
+              covering ranges of 0-40 km and depths of 0-200 m. The following tables
+              show the results reported in the paper.
             </p>
             <div class="table-scroll" tabindex="0" role="region" aria-label="Main comparison results; scroll horizontally on small screens">
               <table>
@@ -441,7 +432,6 @@
             </div>
             <p>
               STFM-FNO reduces RMSE by 0.20 dB, approximately 5%, relative to Baseline FNO.
-              These results replace the earlier random-split results and use a different evaluation protocol.
             </p>
           </div>
           <figure class="figure results">
@@ -496,31 +486,20 @@
 
       <section id="release">
         <div class="container">
-          <h2 class="section-title">Research Code Release</h2>
+          <h2 class="section-title">Code and Getting Started</h2>
           <div class="content">
             <p>
-              Version 0.2.0 provides the installable <code>stfm_fno</code> package,
-              all six Table I models, all three Table II temporal encodings,
-              and the frozen monthly blocked split with 2,144 training, 584 test,
-              and 192 purged samples. Originally developed as TAM-FNO, this repository
-              now uses the final paper name STFM-FNO.
+              The official implementation includes STFM-FNO, the comparison models,
+              and temporal encodings used in the paper. Training and evaluation use
+              the paper's monthly blocked split and experimental settings.
             </p>
-            <div class="release-note">
-              <p>
-                Training and evaluation commands now use the final monthly protocol.
-                The release includes paper settings, train-only normalization,
-                configuration and data provenance, and full-precision historical metrics.
-                See the <a href="https://github.com/yufeila/STFM-FNO#reproducing-the-tables">README</a>
-                for installation and table reproduction commands.
-              </p>
-              <p>
-                Data, trained checkpoints, and a RAM solver are not distributed.
-                The release passed nine-model CPU checks and synthetic training/evaluation
-                integration checks; the complete paper experiments were not retrained
-                during release preparation. Automated reproduction of the 100-Hz experiment
-                and publication figure-authoring workflows is outside this release's scope.
-              </p>
-            </div>
+            <p>
+              See the <a href="https://github.com/yufeila/STFM-FNO#installation">README</a>
+              for installation, the <a href="https://github.com/yufeila/STFM-FNO/blob/main/docs/DATA.md">data specification</a>
+              for the required SSP/TL files, and the
+              <a href="https://github.com/yufeila/STFM-FNO/blob/main/docs/REPRODUCIBILITY.md">training and evaluation guide</a>
+              for experiment commands. The dataset and trained checkpoints are not bundled.
+            </p>
           </div>
         </div>
       </section>
