@@ -2,7 +2,7 @@
 
 Research code for **Spatio-Temporal Field-Modulated Fourier Neural Operator for Transmission Loss Estimation**, by **Yufei Yang, Yifan Sun, Lei Cheng, and Peter Gerstoft**.
 
-The manuscript was accepted by *IEEE Signal Processing Letters* on September 27, 2026, according to the authors' final-submission record. [Project page](https://yufeila.github.io/STFM-FNO/) · [Accepted manuscript](docs/paper.pdf) · [Reproduction protocol](docs/REPRODUCIBILITY.md) · [Data specification](docs/DATA.md) · [Citation](CITATION.cff)
+The article is available in the Early Access area of *IEEE Signal Processing Letters* (2026), DOI: [10.1109/LSP.2026.3740795](https://doi.org/10.1109/LSP.2026.3740795). [IEEE Xplore](https://ieeexplore.ieee.org/document/11723170) · [Project page](https://yufeila.github.io/STFM-FNO/) · [Author manuscript (PDF)](docs/paper.pdf) · [Reproduction protocol](docs/REPRODUCIBILITY.md) · [Data specification](docs/DATA.md) · [Citation](CITATION.cff)
 
 STFM-FNO estimates underwater acoustic transmission-loss (TL) fields from a sound-speed field (SSF) and its acquisition time. A 24-dimensional daily/yearly Fourier encoding generates channel-wise affine modulation inside four FNO blocks. Time supplies an auxiliary inductive bias for learning from temporally organized data; the SSF remains the physical environmental input.
 
@@ -159,7 +159,7 @@ This work was supported by the Zhejiang Provincial Natural Science Foundation of
 
 ## Citation and license
 
-Please cite the paper when using the model or experiments. DOI, volume, and pages are omitted because they are not available in the supplied final-submission record. Update this entry when verified publication metadata become available.
+Please cite the paper when using the model or experiments. The entry below uses the IEEE Xplore Early Access metadata; volume, issue, and pages can be added when the final publication metadata are available.
 
 ```bibtex
 @article{yang2026stfmfno,
@@ -167,7 +167,9 @@ Please cite the paper when using the model or experiments. DOI, volume, and page
   author  = {Yang, Yufei and Sun, Yifan and Cheng, Lei and Gerstoft, Peter},
   journal = {IEEE Signal Processing Letters},
   year    = {2026},
-  note    = {Accepted manuscript}
+  doi     = {10.1109/LSP.2026.3740795},
+  url     = {https://ieeexplore.ieee.org/document/11723170},
+  note    = {Early Access}
 }
 ```
 

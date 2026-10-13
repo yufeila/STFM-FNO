@@ -6,8 +6,15 @@
     <title>STFM-FNO for Transmission Loss Estimation</title>
     <meta
       name="description"
-      content="STFM-FNO: Spatio-Temporal Field-Modulated Fourier Neural Operator for Transmission Loss Estimation. Revised manuscript, method, results, and code-release status."
+      content="STFM-FNO: Spatio-Temporal Field-Modulated Fourier Neural Operator for Transmission Loss Estimation. IEEE Signal Processing Letters Early Access article, method, results, and research code."
     >
+    <meta name="citation_title" content="Spatio-Temporal Field-Modulated Fourier Neural Operator for Transmission Loss Estimation">
+    <meta name="citation_author" content="Yufei Yang">
+    <meta name="citation_author" content="Yifan Sun">
+    <meta name="citation_author" content="Lei Cheng">
+    <meta name="citation_author" content="Peter Gerstoft">
+    <meta name="citation_journal_title" content="IEEE Signal Processing Letters">
+    <meta name="citation_doi" content="10.1109/LSP.2026.3740795">
     <style>
       :root {
         --ink: #1f2a27;
@@ -272,10 +279,10 @@
           Spatio-Temporal Field-Modulated Fourier Neural Operator for Transmission Loss Estimation
         </p>
         <div class="authors">Yufei Yang, Yifan Sun, Lei Cheng, and Peter Gerstoft</div>
-        <div class="affiliation">Revised manuscript &middot; September 2026</div>
+        <div class="affiliation">IEEE Signal Processing Letters &middot; Early Access</div>
         <div class="publication-links">
           <a class="button" href="https://github.com/yufeila/STFM-FNO">Code</a>
-          <a class="button" href="paper.pdf">Revised Manuscript</a>
+          <a class="button" href="https://ieeexplore.ieee.org/document/11723170" title="Early Access article; DOI: 10.1109/LSP.2026.3740795">IEEE Xplore</a>
           <a class="button" href="#results">Results</a>
           <a class="button" href="#release">Code Release Status</a>
         </div>
@@ -301,7 +308,7 @@
             </p>
             <p>
               Rather than concatenating time with the SSF, the method maps Fourier-encoded time
-              to block-wise affine parameters that modulate latent spatial features. The revised
+              to block-wise affine parameters that modulate latent spatial features. The
               study evaluates this design under monthly blocked testing with temporal purge intervals,
               including conditional FNO baselines, a separate operating-frequency experiment,
               and alternative temporal encodings.
@@ -392,7 +399,7 @@
           <figure class="figure architecture">
             <img src="figures/figure_1_architecture.png" alt="STFM-FNO architecture: spatial FNO blocks conditioned by daily and yearly Fourier time features.">
             <figcaption>
-              Revised architecture overview. The temporal branch supplies channel-wise scale and
+              STFM-FNO architecture overview. The temporal branch supplies channel-wise scale and
               shift parameters to the FNO blocks rather than concatenating time with the SSF.
             </figcaption>
           </figure>
@@ -401,7 +408,7 @@
 
       <section id="results">
         <div class="container">
-          <h2 class="section-title">Revised Experiments and Results</h2>
+          <h2 class="section-title">Experiments and Results</h2>
           <div class="content">
             <h3>Monthly Blocked Evaluation</h3>
             <p>
@@ -414,11 +421,11 @@
             <p>
               The main configuration uses a 200-Hz source at 50-m depth and a 199-by-800 grid
               covering ranges of 0-40 km and depths of 0-200 m. All values below are reported
-              manuscript results; no experiments were rerun for this website update.
+              paper results; no experiments were rerun for this website update.
             </p>
             <div class="table-scroll" tabindex="0" role="region" aria-label="Main comparison results; scroll horizontally on small screens">
               <table>
-                <caption>Main comparison under the revised monthly blocked protocol.</caption>
+                <caption>Main comparison under the monthly blocked protocol.</caption>
                 <thead>
                   <tr><th scope="col">Model</th><th scope="col">RMSE (dB) &#8595;</th><th scope="col">Relative L2 &#8595;</th><th scope="col">SSIM &#8593;</th><th scope="col">PCC &#8593;</th></tr>
                 </thead>
@@ -438,9 +445,9 @@
             </p>
           </div>
           <figure class="figure results">
-            <img src="figures/figure_2_tl_predictions.png" loading="lazy" alt="Revised acoustic-field comparison using RAM reference TL, model estimates, and error maps.">
+            <img src="figures/figure_2_tl_predictions.png" loading="lazy" alt="Acoustic-field comparison using RAM reference TL, model estimates, and error maps.">
             <figcaption>
-              Acoustic-field comparison from the revised manuscript under the monthly blocked protocol.
+              Acoustic-field comparison under the monthly blocked protocol.
             </figcaption>
           </figure>
           <div class="content">
@@ -534,7 +541,7 @@
     </main>
 
     <footer>
-      STFM-FNO for Transmission Loss Estimation. Accepted manuscript and academic code release.
+      STFM-FNO for Transmission Loss Estimation. IEEE Signal Processing Letters Early Access article and academic code release.
     </footer>
   </body>
 </html>
