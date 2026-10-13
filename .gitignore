@@ -1,51 +1,41 @@
-# Python
+# Python/build caches
 __pycache__/
 *.py[cod]
-*.so
+*.egg-info/
 .pytest_cache/
 .ruff_cache/
-.mypy_cache/
 .venv/
 venv/
+build/
+dist/
 
-# Local data and experiment artifacts
-raw_data/
-data/*
+# Raw data and generated experiment artifacts
+/raw_data/
+/data/
+/runs/
+/outputs/
+/artifacts/
+/results/
+/checkpoints/
 /normalizers/
 /logs/
-/results/
-runs/
-checkpoints/
-/outputs/
-/paper_outputs*/
-/retrain*/
-
-# Large or generated scientific files
 *.mat
-*.npz
 *.npy
+*.npz
 *.pt
 *.pth
-*.pkl
 *.h5
 *.hdf5
-
-# Generated figures and scratch exports
-*.pdf
-!docs/paper.pdf
-*.aux
+*.pkl
 *.log
-*.fdb_latexmk
-*.fls
-tmp/
 
-# Local tools
+# Local tools and scratch files
 REPOSITORY_STRUCTURE.md
 graphify-out/
 .graphify_*
 .DS_Store
 .idea/
 .vscode/
+tmp/
 *.swp
-*.swo
 *~

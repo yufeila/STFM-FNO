@@ -1,0 +1,6 @@
+include README.md CITATION.cff CONTRIBUTING.md requirements.txt environment.yml THIRD_PARTY_NOTICES.md
+recursive-include LICENSES *.txt
+recursive-include configs *.json
+recursive-include reference_results *.json
+recursive-include scripts *.py *.sh
+recursive-include docs *.md *.pdf *.png *.html *.json

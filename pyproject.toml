@@ -3,54 +3,31 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "tam-fno-underwater-acoustic-prediction"
-version = "0.1.0"
-description = "Spatio-temporal field-modulated Fourier neural operator for underwater acoustic transmission loss estimation."
+name = "stfm-fno"
+version = "0.2.0"
+description = "Spatio-temporal field-modulated Fourier neural operator for transmission-loss estimation"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.10,<3.13"
 license = { text = "MIT" }
-authors = [
-  { name = "Yufei Yang" }
-]
-keywords = [
-  "underwater acoustics",
-  "Fourier neural operator",
-  "scientific machine learning",
-  "transmission loss",
-  "time modulation"
-]
-classifiers = [
-  "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.10",
-  "License :: OSI Approved :: MIT License",
-  "Intended Audience :: Science/Research",
-  "Topic :: Scientific/Engineering :: Artificial Intelligence"
-]
+authors = [{ name = "Yufei Yang" }]
+keywords = ["underwater acoustics", "Fourier neural operator", "transmission loss", "FiLM"]
 dependencies = [
-  "numpy>=1.26",
-  "scipy>=1.11",
-  "h5py>=3.11",
-  "torch",
-  "matplotlib",
-  "pandas",
-  "scikit-image",
-  "scikit-learn",
-  "tqdm"
+  "numpy==1.26.4",
+  "scipy==1.11.4",
+  "h5py==3.11.0",
+  "torch==2.5.1",
+  "scikit-image==0.25.2"
 ]
 
 [project.urls]
-Homepage = "https://yufeila.github.io/TAM-FNO-Underwater-Acoustic-Prediction/"
 Repository = "https://github.com/yufeila/TAM-FNO-Underwater-Acoustic-Prediction"
+Homepage = "https://yufeila.github.io/TAM-FNO-Underwater-Acoustic-Prediction/"
+
+[project.scripts]
+stfm-fno = "stfm_fno.experiments:main"
 
 [tool.setuptools]
-package-dir = {"" = "src"}
-py-modules = [
-  "io_mat",
-  "normalizer",
-  "tam_fno_config",
-  "tam_fno_data",
-  "tam_fno_model",
-  "tam_fno_split",
-  "tam_fno_time",
-  "tam_fno_train"
-]
+license-files = ["LICENSE", "LICENSES/*.txt", "THIRD_PARTY_NOTICES.md"]
+
+[tool.setuptools.packages.find]
+where = ["src"]

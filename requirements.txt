@@ -1,11 +1,5 @@
-numpy>=1.26
-scipy>=1.11
-h5py>=3.11
-torch
-torchvision
-torchaudio
-matplotlib
-pandas
-scikit-image
-scikit-learn
-tqdm
+numpy==1.26.4
+scipy==1.11.4
+h5py==3.11.0
+torch==2.5.1
+scikit-image==0.25.2

@@ -1,12 +1,30 @@
 cff-version: 1.2.0
-message: "If you use this code, please cite the revised STFM-FNO manuscript linked in the README and this software."
-title: "STFM-FNO for Underwater Acoustic Transmission Loss Estimation"
+message: "Please cite the associated paper when using this research code."
 type: software
+title: "STFM-FNO research software"
+version: "0.2.0"
 authors:
   - family-names: Yang
     given-names: Yufei
+    orcid: "https://orcid.org/0009-0000-0127-2356"
 repository-code: "https://github.com/yufeila/TAM-FNO-Underwater-Acoustic-Prediction"
-url: "https://yufeila.github.io/TAM-FNO-Underwater-Acoustic-Prediction/"
-version: "0.1.0"
-date-released: "2026-05-15"
 license: MIT
+preferred-citation:
+  type: article
+  title: "Spatio-Temporal Field-Modulated Fourier Neural Operator for Transmission Loss Estimation"
+  authors:
+    - family-names: Yang
+      given-names: Yufei
+      orcid: "https://orcid.org/0009-0000-0127-2356"
+    - family-names: Sun
+      given-names: Yifan
+      orcid: "https://orcid.org/0009-0000-4250-8193"
+    - family-names: Cheng
+      given-names: Lei
+      orcid: "https://orcid.org/0000-0002-0097-0547"
+    - family-names: Gerstoft
+      given-names: Peter
+      orcid: "https://orcid.org/0000-0002-0471-062X"
+  journal: "IEEE Signal Processing Letters"
+  year: 2026
+  notes: "Accepted manuscript. DOI, volume and pages were not available in the local final-submission record."

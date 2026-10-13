@@ -366,12 +366,12 @@
             <p>
               A block-specific temporal MLP produces channel-wise parameters
               \(\gamma_\ell(t)\) and \(\beta_\ell(t)\). For the spatial feature tensor
-              \(\widehat{\mathcal F}_\ell(\mathbf{x})\), the affine modulation is
+              \(\widehat{\mathcal F}_\ell(\mathbf{x})\), the additive latent modulation field is
             </p>
             <div class="equation">
               \[
                 \mathcal M_\ell(\mathbf{x},t) =
-                \left(1+\gamma_\ell(t)\right)\odot
+                \gamma_\ell(t)\odot
                 \widehat{\mathcal F}_\ell(\mathbf{x})+\beta_\ell(t).
               \]
             </div>
@@ -390,7 +390,7 @@
             </p>
           </div>
           <figure class="figure architecture">
-            <img src="assets/architecture.png" alt="STFM-FNO architecture: spatial FNO blocks conditioned by daily and yearly Fourier time features.">
+            <img src="figures/figure_1_architecture.png" alt="STFM-FNO architecture: spatial FNO blocks conditioned by daily and yearly Fourier time features.">
             <figcaption>
               Revised architecture overview. The temporal branch supplies channel-wise scale and
               shift parameters to the FNO blocks rather than concatenating time with the SSF.
@@ -438,7 +438,7 @@
             </p>
           </div>
           <figure class="figure results">
-            <img src="assets/fig2_tl_visuals.png" loading="lazy" alt="Revised acoustic-field comparison using RAM reference TL, model estimates, and error maps.">
+            <img src="figures/figure_2_tl_predictions.png" loading="lazy" alt="Revised acoustic-field comparison using RAM reference TL, model estimates, and error maps.">
             <figcaption>
               Acoustic-field comparison from the revised manuscript under the monthly blocked protocol.
             </figcaption>
@@ -479,7 +479,7 @@
             </p>
           </div>
           <figure class="figure results">
-            <img src="assets/feature_interception.png" loading="lazy" alt="First-block latent features before and after modulation for a fixed SSF with winter and summer time indices.">
+            <img src="figures/figure_3_feature_modulation.png" loading="lazy" alt="First-block latent features before and after modulation for a fixed SSF with winter and summer time indices.">
             <figcaption>
               Feature interception with the SSF held fixed shows the temporal branch's effect on latent spatial features.
             </figcaption>
@@ -489,26 +489,28 @@
 
       <section id="release">
         <div class="container">
-          <h2 class="section-title">Code Release Status</h2>
+          <h2 class="section-title">Research Code Release</h2>
           <div class="content">
             <p>
-              The project was originally released as TAM-FNO. Repository URLs, package and
-              environment names, and the <code>tam_fno_*</code> modules are retained for compatibility.
-              The public release contains the core model and its preprocessing, training,
-              and evaluation entry points.
+              Version 0.2.0 provides the installable <code>stfm_fno</code> package,
+              all six Table I models, all three Table II temporal encodings,
+              and the frozen monthly blocked split with 2,144 training, 584 test,
+              and 192 purged samples. The repository retains its historical TAM-FNO URL.
             </p>
             <div class="release-note">
               <p>
-                <strong>The current public scripts still use the legacy random split:
-                2,336 training and 584 test samples.</strong> They do not implement the revised
-                2,144/584/192 monthly blocked protocol. The updated tables above describe the
-                manuscript experiments, not results directly reproducible with the default public commands.
+                Training and evaluation commands now use the final monthly protocol.
+                The release includes paper settings, train-only normalization,
+                configuration and data provenance, and full-precision historical metrics.
+                See the <a href="https://github.com/yufeila/TAM-FNO-Underwater-Acoustic-Prediction#reproducing-the-tables">README</a>
+                for installation and table reproduction commands.
               </p>
               <p>
-                Comparison-model runners, revised split manifests, data, checkpoints, normalizers,
-                and result archives are not included. This documentation update does not change
-                the training code. See the <a href="https://github.com/yufeila/TAM-FNO-Underwater-Acoustic-Prediction#code-release-and-reproduction-status">README</a>
-                for setup and release details.
+                Data, trained checkpoints, and a RAM solver are not distributed.
+                The release passed nine-model CPU checks and synthetic training/evaluation
+                integration checks; the complete paper experiments were not retrained
+                during release preparation. Automated reproduction of the 100-Hz experiment
+                and publication figure-authoring workflows is outside this release's scope.
               </p>
             </div>
           </div>
@@ -531,7 +533,7 @@
     </main>
 
     <footer>
-      STFM-FNO for Transmission Loss Estimation. Revised manuscript and academic code release.
+      STFM-FNO for Transmission Loss Estimation. Accepted manuscript and academic code release.
     </footer>
   </body>
 </html>

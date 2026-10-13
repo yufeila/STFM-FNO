@@ -1,20 +1,8 @@
-name: tam_fno
+name: stfm_fno
 channels:
-  - pytorch
-  - nvidia
   - conda-forge
 dependencies:
   - python=3.10
-  - numpy=1.26.*
-  - scipy=1.11.*
-  - h5py=3.11.*
-  - pytorch
-  - torchvision
-  - torchaudio
-  - pytorch-cuda=12.1
-  - matplotlib
-  - pandas
-  - scikit-image
-  - scikit-learn
-  - tqdm
   - pip
+  - pip:
+      - -r requirements.txt

@@ -1,0 +1,61 @@
+{
+  "kind": "recorded_historical_results",
+  "split": "monthly_stratified_blocked_gap1d",
+  "seed": 1,
+  "epochs": 100,
+  "counts": {
+    "ntrain": 2144,
+    "ntest": 584,
+    "npurge": 192
+  },
+  "models": {
+    "baseline": {
+      "label": "Baseline",
+      "parameters": 134243073,
+      "rmse": 4.150425910949707,
+      "rel_l2": 0.05168852582573891,
+      "ssim": 0.7872978051666779,
+      "pcc": 0.9522937557731385
+    },
+    "scalar": {
+      "label": "Concat (Scalar)",
+      "parameters": 134243137,
+      "rmse": 4.216358661651611,
+      "rel_l2": 0.05251266434788704,
+      "ssim": 0.7808282333738228,
+      "pcc": 0.9505826175814948
+    },
+    "pe": {
+      "label": "Concat (PE)",
+      "parameters": 134244609,
+      "rmse": 4.766671180725098,
+      "rel_l2": 0.059355735778808594,
+      "ssim": 0.7337569101131841,
+      "pcc": 0.938016402714785
+    },
+    "film": {
+      "label": "STFM-FNO",
+      "parameters": 134282753,
+      "rmse": 3.9536099433898926,
+      "rel_l2": 0.04923605918884277,
+      "ssim": 0.8000786175188399,
+      "pcc": 0.9562470862046186
+    },
+    "fnm": {
+      "parameters": 134282505,
+      "single_sample_inference_ms": 40.237938053905964,
+      "rmse": 4.416843414306641,
+      "rel_l2": 0.054997965693473816,
+      "ssim": 0.7546505932520249,
+      "pcc": 0.946498973425821
+    },
+    "hyper": {
+      "parameters": 134282819,
+      "single_sample_inference_ms": 59.586426243186,
+      "rmse": 4.139983177185059,
+      "rel_l2": 0.05156134068965912,
+      "ssim": 0.787127474967945,
+      "pcc": 0.9523464949331538
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "paper_title": "Spatio-Temporal Field-Modulated Fourier Neural Operator for Transmission Loss Estimation",
+  "split": "monthly_stratified_blocked_gap1d",
+  "counts": {
+    "train": 2144,
+    "test": 584,
+    "purge": 192
+  },
+  "network": {
+    "modes1": 32,
+    "modes2": 128,
+    "width": 64,
+    "blocks": 4,
+    "padding": 20,
+    "dropout": 0.1,
+    "film_hidden": 64
+  },
+  "optimization": {
+    "epochs": 100,
+    "batch_size": 20,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "scheduler": "StepLR",
+    "step_size": 50,
+    "gamma": 0.5,
+    "loss": "H1Loss(d=2, beta=0.01)",
+    "checkpoint": "final_epoch"
+  },
+  "table1": {
+    "seeds": [
+      1
+    ],
+    "variants": [
+      "baseline",
+      "scalar",
+      "pe",
+      "fnm",
+      "hyper",
+      "film"
+    ]
+  },
+  "table2": {
+    "seeds": [
+      1,
+      2,
+      3
+    ],
+    "variants": [
+      "generic_fourier_film",
+      "time2vec_film",
+      "ours_fourier_film"
+    ]
+  },
+  "encoding": {
+    "daily_harmonics": 4,
+    "yearly_harmonics": 8,
+    "year_phase_denominator": 2919,
+    "daily_phase_denominator": 8
+  }
+}

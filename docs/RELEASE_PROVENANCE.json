@@ -1,0 +1,88 @@
+{
+  "prepared_date": "2026-10-13",
+  "package_version": "0.2.0",
+  "previous_public_repository_commit": "3d0f8b15842582c4e489589dcea7179281f6b56e",
+  "historical_experiment_source_commit": "not recorded in the supplied experiment files",
+  "source_snapshots": [
+    {
+      "source_path": "FNO/src/models/fno2d.py",
+      "sha256": "000005324fcd29ab3e66609dd2441d78789c481a0fd34372f661c541ba44a314"
+    },
+    {
+      "source_path": "FNO/src/models/fno2d_film.py",
+      "sha256": "694339c57c144076008bea1a93c9793cc048d0a6990e72c96a883851053c4843"
+    },
+    {
+      "source_path": "FNO/src/tam_fno_time.py",
+      "sha256": "f78ede9dfbdefd6f500abfa48b578535626d72d998f505dd5b6050767a7665d6"
+    },
+    {
+      "source_path": "FNO/src/normalizer.py",
+      "sha256": "72afd654da755792d14a2f6b3ffb63638471164dec3d852f74b66745cb2bdb88"
+    },
+    {
+      "source_path": "FNO/retrain_monthly_blocked_gap1d_v1/monthly_blocked_runner.py",
+      "sha256": "ef7fe8562a24a4ef73c64f32ea07053cfe40428499c5bdde2ee00816c8ae6e0d"
+    },
+    {
+      "source_path": "FNO/conditional_baselines_v1/conditional_models.py",
+      "sha256": "24cc4a1c7a4b98b8226337af6acf529b03636f9e412b671b2a069f81ca20d7c2"
+    },
+    {
+      "source_path": "FNO/conditional_baselines_v1/run_conditional_baselines.py",
+      "sha256": "b886b1ed3e9b2bb7b5a2602539696657f886b98ca60ddc91b4078bfac89f438f"
+    },
+    {
+      "source_path": "FNO/retrain_monthly_blocked_gap1d_time_ablation_v2/time_encoding_ablation_runner.py",
+      "sha256": "979d3136050f88f71905b5505a2def404c381a25c289955625051673755aaccf"
+    },
+    {
+      "source_path": "paper_opinion/aq_revision_1/final_submission/final_manuscript_source/main.tex",
+      "sha256": "fbd9e2c98a3c0f10fb253135a6555d293f91928694326795f2c2849c2f6bd3e8"
+    }
+  ],
+  "manuscript_pdf_sha256": "1748f0a04f7e2c09c422a71fe7f70fdbfaa7b99b82e1f5a4c64984547b2b2090",
+  "code_snapshot_sha256": "7c17f7476a527a044e8eeafe7fb29077d663d544e452a9e145054214c09cdb6c",
+  "validation": {
+    "device": "cpu",
+    "synthetic_smoke_model_count": 9,
+    "all_checkpoint_roundtrips_passed": true,
+    "full_architecture_parameter_counts_checked_without_allocation": true,
+    "baseline_and_film_exact_forward_equivalence_on_small_inputs": true,
+    "canonical_indices_equal_historical_manifest": true,
+    "real_ssp_loader_matches_original_axis_order": true,
+    "synthetic_train_evaluate_integration_epochs": 1,
+    "changed_data_and_normalizer_rejected": true,
+    "wheel_build_and_clean_target_import_passed": true,
+    "licenses_present_in_wheel": true,
+    "full_paper_training_rerun": false
+  },
+  "figure_assets": [
+    {
+      "figure": 1,
+      "source_path": "paper_opinion/aq_revision_1/final_submission/final_manuscript_source/figures/figure_1.pdf",
+      "source_pdf_sha256": "e45413fa3fdd78c73bb64f6a4408ea52e029d4680316e3dbfeaac6268e8d71cf",
+      "preview_path": "docs/figures/figure_1_architecture.png",
+      "preview_sha256": "992ef0727f80aa7cd9761670cb208c2551ac7ad3a7ec0bc5ec611dbef2726435",
+      "rendering": "Poppler pdftoppm; full-page PNG export, no content edits"
+    },
+    {
+      "figure": 2,
+      "source_path": "paper_opinion/aq_revision_1/final_submission/final_manuscript_source/figures/figure_2.pdf",
+      "source_pdf_sha256": "6ef852da2c7d64f97aa29d5b9c93302f0dc5f69afa1e46ca5064a95492e337e1",
+      "preview_path": "docs/figures/figure_2_tl_predictions.png",
+      "preview_sha256": "c76a9ce7c9ea8f13d7da43f33b3388284cb4d9a2dd1138536b4753d3392dedeb",
+      "rendering": "Poppler pdftoppm; full-page PNG export, no content edits"
+    },
+    {
+      "figure": 3,
+      "source_path": "paper_opinion/aq_revision_1/final_submission/final_manuscript_source/figures/figure_3.pdf",
+      "source_pdf_sha256": "7766a8eaa8e0e5f2e88a22f03e6c54130a7ec817fb90b857346b64d3df7c2a32",
+      "preview_path": "docs/figures/figure_3_feature_modulation.png",
+      "preview_sha256": "c43150ceff4ce48f58c62603a966e0e0350dd763c535c390042a785c825a4641",
+      "rendering": "Poppler pdftoppm; full-page PNG export, no content edits"
+    }
+  ],
+  "preparation_basis": "Source snapshot prepared before publication; historical experiment sources and package code hashes are retained.",
+  "publication_base_commit": "4c31bc2ceeb836878f248e67dc04a513decc325b"
+}
